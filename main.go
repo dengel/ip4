@@ -16,7 +16,7 @@ func handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyRespo
 
 	return events.APIGatewayProxyResponse{
 		StatusCode: 200,
-		Body:       request.Headers.Get("X-Forwarded-For"),
+		Body:       request.Headers["X-Forwarded-For"],
 	}, nil
 
 }
