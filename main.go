@@ -10,10 +10,8 @@ import (
 
 func handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
 
-  log.Printf("Headers:\n")
-  for key, value := range request.Headers {
-    log.Printf("    %s: %s\n", key, value)
-  }
+  source := strings.Split(request.Headers["X-Forwarded-For"], ",")[0]
+  log.Printf("Connection from: %s\n", source)
 
 	return events.APIGatewayProxyResponse{
 		StatusCode: 200,
