@@ -9,7 +9,7 @@ import (
 
 func handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
 
-  log.Printf("Processing Lambda request %s\n", request.RequestContext.RequestID)
+  log.Printf("Processing Lambda request %s\n", request.RequestContext.RemoteAddr)
 
 	return events.APIGatewayProxyResponse{
 		StatusCode: 200,
