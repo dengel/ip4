@@ -9,11 +9,11 @@ import (
 
 func handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
 
-  log.Printf("Processing Lambda request %s\n", request.RequestContext.RemoteAddr)
+  log.Printf("Remote Addr %s\n", request.RequestContext.RemoteAddr)
 
 	return events.APIGatewayProxyResponse{
 		StatusCode: 200,
-		Body:       "hi!",
+		Body:       request.RequestContext.RemoteAddr,
 	}, nil
 
 }
