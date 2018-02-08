@@ -9,7 +9,6 @@ import (
 
 func handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
 
-  log.Printf("Remote Addr %s\n", request.RequestContext.RemoteAddr)
   log.Printf("Headers:\n")
   for key, value := range request.Headers {
     log.Printf("    %s: %s\n", key, value)
