@@ -11,11 +11,12 @@ import (
 func handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
 
   source := strings.Split(request.Headers["X-Forwarded-For"], ",")[0]
+
   log.Printf("Connection from: %s\n", source)
 
 	return events.APIGatewayProxyResponse{
 		StatusCode: 200,
-		Body:       strings.Split(request.Headers["X-Forwarded-For"], ",")[0],
+		Body:       source,
 	}, nil
 
 }
