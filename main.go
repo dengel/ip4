@@ -1,7 +1,7 @@
 package main
 
 import (
-	"io/ioutil"
+  "log"
 
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
